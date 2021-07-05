@@ -129,20 +129,10 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   result = recipe.ingredients.map((ele, index) => {
-    let last = ele.split(" ");
-    if (last.length === 5) {
-      return (
-        last[last.length - 3] +
-        " " +
-        last[last.length - 2] +
-        " " +
-        last[last.length - 1]
-      );
-    } else if (last.length % 2 !== 0) {
-      return last[last.length - 1];
-    } else {
-      return last[last.length - 2] + " " + last[last.length - 1];
-    }
+    ele = ele.slice(ele.indexOf(" ") + 1);
+    ele = ele.slice(ele.indexOf(" ") + 1);
+
+    return ele;
   });
   return result;
 };
@@ -157,30 +147,36 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  result = recipe.ingredients.map((ele, index) => {
+    ele = ele.split(" ");
+    ele.shift();
+    ele.shift();
+    return ele.join(" ");
+  });
   return result;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
 Use the same recipe from Challenge 3, above.
 
-Write a function named stepAction that takes in the recipe and extracts the action verbs from the steps. Fortunate for you, the action verbs are the first word of each action.
+Write a function named stepAction that takes in the recipe and extracts the action verbs from the steps. 
+Fortunate for you, the action verbs are the first word of each action.
 
 Return a new array containing just the verbs. For example, ['Mix until evenly distributed'] returns ['Mix'].
 ------------------------------------------------------------------------------------------------ */
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  result = recipe.steps.map((ele) => ele.split(" ")[0]);
   return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
-Write a function named removeEvenValues that, given an array of integers as input, deletes all even values from the array, leaving no 'gaps' behind.
+Write a function named removeEvenValues that, given an array of integers
+ as input, deletes all even values from the array, leaving no 'gaps' behind.
 
 The array should be modified in-place.
 
@@ -191,17 +187,25 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  let arr2 = [...arr];
+  arr2.forEach((ele, index) => {
+    if (ele % 2 === 0) {
+      arr.splice(arr.indexOf(ele), 1);
+    }
+  });
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
-Write a function named removeLastCharacters that takes in a string and a number. The numberOfCharacters argument determines how many characters will be removed from the end of the string. Return the resulting string.
+Write a function named removeLastCharacters that takes in a string and a number.
+ The numberOfCharacters argument determines how many characters will be removed 
+ from the end of the string. Return the resulting string.
 
-If the numberOfCharacters argument is greater than the length of the input string, the function should return an empty string.
+If the numberOfCharacters argument is greater than the length of the input string, 
+the function should return an empty string.
 
-If the numberOfCharacters argument input is a negative number, the function should return the input string without any changes.
+If the numberOfCharacters argument input is a negative number, the function should
+ return the input string without any changes.
 
 For example:
 removeLastCharacters('Gregor', 2) returns 'Greg'
@@ -210,37 +214,46 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  if (numberOfCharacters <= 0) return str;
+  else if (numberOfCharacters >= str) return "";
+  else {
+    return str.slice(0, str.length - numberOfCharacters);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
 
-Write a function named totalSumCSV that, given a string of comma-separated values (CSV) as input. (e.g. "1,2,3"), returns the total sum of the numeric values (e.g. 6).
+Write a function named totalSumCSV that, given a string of comma-separated values (CSV) 
+as input. (e.g. "1,2,3"), returns the total sum of the numeric values (e.g. 6).
 ------------------------------------------------------------------------------------------------ */
 
 const totalSumCSV = (str) => {
   let total = 0;
   // Solution code here...
-  return total;
+  total = str.split(",");
+  return total.reduce((acc, ele) => acc + Number(ele), 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 12 - Stretch Goal
 
-Write a function named removeVowels that takes in a string and returns a new string where all the vowels of the original string have been removed.
+Write a function named removeVowels that takes in a string and returns a new string where
+ all the vowels of the original string have been removed.
 
 For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-  // Solution code here...
+  return str.replace(/[aeiou]/gi, "");
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 13 - Stretch Goal
 
-Write a function named extractVowels that takes in a string and returns an array where the first element is the original string with all the vowels removed, and the second element is a string of all the vowels that were removed, in alphabetical order.
+Write a function named extractVowels that takes in a string and returns an array where 
+the first element is the original string with all the vowels removed, and the second element
+ is a string of all the vowels that were removed, in alphabetical order.
 
 For example, extractVowels('gregor') returns ['grgr', 'eo'].
 
@@ -248,7 +261,33 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 ------------------------------------------------------------------------------------------------ */
 
 const extractVowels = (str) => {
-  // Solution code here...
+  let vowels = {
+    a: true,
+    e: true,
+    i: true,
+    o: true,
+    u: true,
+  };
+
+  let result = "";
+  let vo = [];
+  let full = [];
+
+  for (let i = 0; i < str.length; i++) {
+    let letter = str[i].toLowerCase();
+    if (!vowels[letter]) {
+      result += str[i];
+    } else vo.push(str[i]);
+  }
+  full.push(result);
+
+  vo.sort((a, b) => {
+    if (a > b) {
+      return 1;
+    } else return -1;
+  });
+  full.push(vo.join(""));
+  return full;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -349,7 +388,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should return a list of foods", () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual([
       "Gruffalo",
@@ -367,7 +406,7 @@ xdescribe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should return a list of recipe steps", () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual([
       "Pre-heat",
@@ -384,7 +423,7 @@ xdescribe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should remove the even numbers from the array", () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
@@ -397,7 +436,7 @@ xdescribe("Testing challenge 9", () => {
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   test("It should shorten the string based on the first argument", () => {
     expect(removeLastCharacters("Gregor", 2)).toStrictEqual("Greg");
     expect(removeLastCharacters("Gregor", 2).length).toStrictEqual(4);
@@ -413,14 +452,14 @@ xdescribe("Testing challenge 10", () => {
   });
 });
 
-xdescribe("Testing challenge 11", () => {
+describe("Testing challenge 11", () => {
   test("It should add up the numbers contained within the string", () => {
     expect(totalSumCSV("1,4,5,7,2")).toStrictEqual(19);
     expect(totalSumCSV("147")).toStrictEqual(147);
   });
 });
 
-xdescribe("Testing challenge 12", () => {
+describe("Testing challenge 12", () => {
   test("It should return the string without vowels", () => {
     expect(removeVowels("gregor")).toStrictEqual("grgr");
     expect(removeVowels("gregor").length).toStrictEqual(4);
@@ -429,7 +468,7 @@ xdescribe("Testing challenge 12", () => {
   });
 });
 
-xdescribe("Testing challenge 13", () => {
+describe("Testing challenge 13", () => {
   test("It should return the string without vowels", () => {
     expect(extractVowels("gregor")).toStrictEqual(["grgr", "eo"]);
     expect(extractVowels("gregor").length).toStrictEqual(2);
