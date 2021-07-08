@@ -278,7 +278,7 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 
 const excel = (str) =>
   str
-    .match(/\w\W\w\W\w*\b/g)
+    .split("\n")
     .map((ele) => ele.split(","))
     .map((ele) => ele.reduce((acc, ele) => (acc += Number(ele)), 0));
 /* ------------------------------------------------------------------------------------------------
