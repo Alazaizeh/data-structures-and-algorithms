@@ -82,58 +82,54 @@ const allHappy = (arr) =>
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named findAnything that takes in an array of strings, along with a target string. Return an array containing only those strings from the original array that contain the target string.
+Write a function named findAnything that takes in an array of strings.
+along with a target string.
+Return an array containing only those.
+Strings from the original array that contain the target string.
 ------------------------------------------------------------------------------------------------ */
 
-const findAnything = (arr, target) => {
-  // Solution code here...
-};
+const findAnything = (arr, target) => arr.filter((ele) => ele.includes(target));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
-Write a function named findEvery that takes in an array of strings, along with a target string. Return a Boolean based on whether or not every string in the array contains the target string.
+Write a function named findEvery that takes in an array of strings, along with a target string.
+Return a Boolean based on whether or not every string in the array contains the target string.
 ------------------------------------------------------------------------------------------------ */
 
-const findEvery = (arr, target) => {
-  // Solution code here...
-};
-
+const findEvery = (arr, target) =>
+  arr.filter((ele) => ele.includes(target)).length === arr.length;
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
-We've been testing a new course enrollment system, and we think we have the bugs worked out, but in the meantime, Brook enrolled himself in a bunch of different classes to test if it was working.
-
-Write a function named unenrollBrook that takes in a two-dimensional array, where each array represents one course's roster and is an array of strings of the names of the people in that course.
-
-Return a two-dimensional array with the same roster, but where anyone whose name includes Brook is removed from every course.
-
-For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again', 'still Brook']] returns [['Actual Person'], ['Human Person']]
+We've been testing a new course enrollment system, and we think we have the bugs worked out,
+but in the meantime, Brook enrolled himself in a bunch of different classes to test if it was working.
+Write a function named unenrollBrook that takes in a two-dimensional array,
+where each array represents one course's roster and is an array
+of strings of the names of the people in that course.
+Return a two-dimensional array with the same roster,
+ but where anyone whose name includes Brook is removed from every course.
+For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again',
+ 'still Brook']] returns [['Actual Person'], ['Human Person']]
 ------------------------------------------------------------------------------------------------ */
 
-const unenrollBrook = (arr) => {
-  // Solution code here...
-};
+const unenrollBrook = (arr) =>
+  arr.map((ele) => ele.filter((ele) => !ele.includes("Brook")));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
-Write a function named sortByDay that takes in an array of strings, each of which represents an event's day and time.
-
-Return a two-dimensional array that organizes those strings based on the day on which they occur. For example, all events on Monday are in the first array, all events on Tuesday are in the second array, etc.
-
-If an event takes place on multiple days (i.e. "Dancing on Mondays and Tuesdays"), it should appear in both arrays.
-
+Write a function named sortByDay that takes in an array of strings,
+ each of which represents an event's day and time.
+Return a two-dimensional array that organizes those strings based on the day on which they occur.
+ For example, all events on Monday are in the first array, all events on 
+ Tuesday are in the second array, etc.
+If an event takes place on multiple days.
+(i.e. "Dancing on Mondays and Tuesdays"), it should appear in both arrays.
 For example, ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thursday'] returns
-[
-  ['Monday'],
-  ['Tuesday', 'Tuesday 2'],
-  ['Wednesday and Thursday'],
-  ['Wednesday and Thursday', 'Thursday'],
-  [],
-  [],
-  []
-]
+[ ['Monday'] , ['Tuesday', 'Tuesday 2'] , ['Wednesday and Thursday'] , 
+['Wednesday and Thursday']['Thursday'] [] , [] , [] ]
+
 ------------------------------------------------------------------------------------------------ */
 
 const daysOfWeek = [
@@ -147,20 +143,20 @@ const daysOfWeek = [
 ];
 
 const sortByDay = (arr) => {
-  // Solution code here...
+  //      S o l u t i o n      c o d e     h e r e . . .
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
 
-Write a function named characterByIndex that takes in an array of strings and returns an array containing the first character of the first string, the second character of the second string, etc.
+Write a function named characterByIndex that takes in an array of strings and returns
+ an array containing the first character of the first string, the second character of 
+ the second string, etc.
 
 For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
-const characterByIndex = (arr) => {
-  // Solution code here...
-};
+const characterByIndex = (arr) => arr.map((ele, index) => ele[index]);
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -269,7 +265,7 @@ describe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should find all the strings that contain a given string", () => {
     const words = [
       "things",
@@ -287,7 +283,7 @@ xdescribe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should determine whether all the strings contain a given string", () => {
     const words = [
       "things",
@@ -303,7 +299,7 @@ xdescribe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should remove Brook from all courses", () => {
     const roster = [
       ["Michelle", "Allie", "Brook TESTING"],
@@ -323,7 +319,7 @@ xdescribe("Testing challenge 9", () => {
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   test("It should sort events by the day on which they happen", () => {
     const events = [
       "Dancing on Mondays and Tuesdays",
@@ -373,7 +369,7 @@ xdescribe("Testing challenge 10", () => {
   });
 });
 
-xdescribe("Testing challenge 11", () => {
+describe("Testing challenge 11", () => {
   test("It should return the ith character of the ith string", () => {
     const words = ["apple", "banana", "cantaloupe"];
 
