@@ -5,7 +5,7 @@ function to accepts an integer, and returns the nth number in the Fibonacci sequ
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![img](./Interview-02/q2.png)
+![img](./q2.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
 iterating n times. Big O (n)
