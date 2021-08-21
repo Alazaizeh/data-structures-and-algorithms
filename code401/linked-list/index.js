@@ -1,11 +1,6 @@
 "use strict";
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
+const Node = require("./node");
 
 class LinkedList {
   constructor() {
@@ -59,7 +54,10 @@ myList.insert("Jack");
 myList.insert("Albert");
 myList.insert("John");
 
-console.log(myList.includes("John"));
-console.log(myList.includes("Alfred"));
+console.log(myList);
+console.log(`includes("John") =>`, myList.includes("John"));
+console.log(`includes("Alfred") =>`, myList.includes("Alfred"));
 
 console.log(myList.toString());
+
+module.exports = LinkedList;
