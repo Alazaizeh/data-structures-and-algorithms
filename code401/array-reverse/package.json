@@ -1,0 +1,16 @@
+{
+  "name": "array-reverse",
+  "version": "1.0.0",
+  "description": "<!-- Description of the challenge -->\r given an array of elements return an array with elements in reversed oreder \r ## Whiteboard Process\r <!-- Embedded whiteboard image -->\r ![board](./pic.jpg)\r ## Approach & Efficiency\r <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->\r iterating through all array elements from last element to the first.\r Big O notation is used in computer science to describe the performance or complexity of an algorithm. Big O specifically describes the worst-case scenario, and can be used to describe the execution time required or the space used by an algorithm.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.0.6"
+  }
+}
