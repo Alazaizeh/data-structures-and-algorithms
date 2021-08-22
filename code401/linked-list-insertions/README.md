@@ -12,12 +12,13 @@ Big O(n)
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
-- insert
-
+- apend
      ` Adds a new node with that value to the head of the list with an O(1) Time performance.`
 - includes
-
      ` Indicates whether that value exists as a Node’s value somewhere within the list.`
 - toString
-     
      `Returns: a string representing all the values in the Linked List`
+- insertBefore
+     `Adds a new node with the given new value immediately before the first node that has the value specified`
+- insertAfter
+     `Adds a new node with the given new value immediately after the first node that has the value specified`
