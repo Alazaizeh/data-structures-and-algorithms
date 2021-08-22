@@ -86,12 +86,11 @@ class LinkedList {
       if (current.value == value) {
         node.next = current.next;
         current.next = node;
-        return true;
+        return;
       }
       current = current.next;
     }
 
-    current.next = node;
     return;
   }
 }
@@ -102,13 +101,12 @@ myList.append("Jack");
 myList.append("Albert");
 myList.append("John");
 
-myList.insertBefore("Jack", "before");
-myList.insertAfter("John", "after");
+myList.insertBefore("xxx", "before");
+myList.insertAfter("xxx", "after");
 
 console.log(myList);
 console.log(`includes("John") =>`, myList.includes("John"));
 console.log(`includes("Alfred") =>`, myList.includes("Alfred"));
-
 console.log(myList.toString());
 
 module.exports = LinkedList;
