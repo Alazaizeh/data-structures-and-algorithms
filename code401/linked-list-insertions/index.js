@@ -93,6 +93,35 @@ class LinkedList {
 
     return;
   }
+
+  kthFromEnd(k) {
+    let len = 1;
+    let tail = this.head;
+    let current = this.head.next;
+
+    while (current) {
+      current = current.next;
+      len++;
+    }
+
+    if (k <= len) {
+      tail = this.head;
+      current = this.head.next;
+      let counter = len - k;
+      while (counter >= 0 && current.next) {
+        console.log(" counter", counter);
+
+        tail = current;
+        current = current.next;
+        counter--;
+      }
+    } else {
+      return;
+    }
+    console.log("tail", tail.value);
+    console.log("current", current.value);
+    console.log("len", len);
+  }
 }
 
 let myList = new LinkedList();
@@ -101,12 +130,12 @@ myList.append("Jack");
 myList.append("Albert");
 myList.append("John");
 
-myList.insertBefore("xxx", "before");
-myList.insertAfter("xxx", "after");
+// myList.insertBefore("xxx", "before");
+// myList.insertAfter("xxx", "after");
 
-console.log(myList);
-console.log(`includes("John") =>`, myList.includes("John"));
-console.log(`includes("Alfred") =>`, myList.includes("Alfred"));
+// console.log(myList);
+// console.log(`includes("John") =>`, myList.includes("John"));
+// console.log(`includes("Alfred") =>`, myList.includes("Alfred"));
 console.log(myList.toString());
-
+myList.kthFromEnd(0);
 module.exports = LinkedList;
