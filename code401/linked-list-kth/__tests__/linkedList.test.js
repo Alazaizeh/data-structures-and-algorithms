@@ -56,4 +56,31 @@ describe("LinkedList", () => {
     newList.insertAfter(100, 150);
     expect(newList.head.next.value).toEqual(150);
   });
+
+  it("should kthFromEnd return targeted value if k == length", () => {
+    let newList = new LinkedList();
+    newList.append(100);
+    newList.append(200);
+
+    expect(newList.kthFromEnd(1)).toEqual(100);
+  });
+  it("should kthFromEnd return error Where k is not a positive integer", () => {
+    let newList = new LinkedList();
+    newList.append(100);
+    newList.append(200);
+
+    expect(newList.kthFromEnd(-1)).toEqual("invalid K");
+  });
+  it("should kthFromEnd return targeted value", () => {
+    let newList = new LinkedList();
+    newList.append(100);
+    newList.append(200);
+    newList.append(300);
+    expect(newList.kthFromEnd(1)).toEqual(200);
+  });
+  it("should kthFromEnd return targeted value Where the linked list is of a size 1", () => {
+    let newList = new LinkedList();
+    newList.append(100);
+    expect(newList.kthFromEnd(0)).toEqual(100);
+  });
 });
