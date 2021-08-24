@@ -95,32 +95,23 @@ class LinkedList {
   }
 
   kthFromEnd(k) {
-    let len = 1;
-    let tail = this.head;
+    let len = 0;
     let current = this.head.next;
 
     while (current) {
       current = current.next;
       len++;
     }
-
-    if (k <= len) {
-      tail = this.head;
-      current = this.head.next;
-      let counter = len - k;
-      while (counter >= 0 && current.next) {
-        console.log(" counter", counter);
-
-        tail = current;
+    if (k <= len && k >= 0) {
+      current = this.head;
+      for (let i = 0; i < len - k; i++) {
         current = current.next;
-        counter--;
       }
+      return current.value;
     } else {
-      return;
+      return "invalid K";
     }
-    console.log("tail", tail.value);
-    console.log("current", current.value);
-    console.log("len", len);
+    return;
   }
 }
 
@@ -137,5 +128,5 @@ myList.append("John");
 // console.log(`includes("John") =>`, myList.includes("John"));
 // console.log(`includes("Alfred") =>`, myList.includes("Alfred"));
 console.log(myList.toString());
-myList.kthFromEnd(0);
+myList.kthFromEnd(-1);
 module.exports = LinkedList;
