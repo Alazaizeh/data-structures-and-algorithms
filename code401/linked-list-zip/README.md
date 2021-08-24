@@ -3,8 +3,7 @@
 A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations. The elements in a linked list are linked using pointers.
 ## Challenge
 <!-- Description of the challenge -->
-Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node, and Create a Linked List class
-
+Write a function called zip lists take Arguments: 2 linked lists Return a Linked List, zipped, Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list.
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 Big O(n)
