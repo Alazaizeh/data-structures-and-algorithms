@@ -29,3 +29,5 @@ Create a Node class that has properties for the value stored in the Node, and a 
      `Adds a new node with the given new value immediately before the first node that has the value specified`
 - insertAfter
      `Adds a new node with the given new value immediately after the first node that has the value specified`
+- kthFromEnd
+     `Return the node’s value that is k places from the tail of the linked list.`
