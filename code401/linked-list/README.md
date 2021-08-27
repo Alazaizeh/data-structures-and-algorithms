@@ -9,7 +9,8 @@ Create a Node class that has properties for the value stored in the Node, and a 
 ![img](./cc.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-The time complexity for Search for element or inserting an element to the list is O(n).
+The time complexity for Search for element or inserting an element to the list is O(n) the functions increase linearly and in direct proportion to the number of inputs.
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
