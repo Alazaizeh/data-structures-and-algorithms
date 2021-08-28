@@ -5,9 +5,6 @@ class Stack {
   constructor() {
     this.top = null;
   }
-  peek() {
-    return this.top;
-  }
 
   push(value) {
     let node = new Node(value);
@@ -16,10 +13,34 @@ class Stack {
       return;
     }
 
-    this.top.next = node;
     node.next = this.top;
     this.top = node;
     return;
+  }
+
+  pop() {
+    try {
+      let oldTop = this.top;
+      this.top = this.top.next;
+      return oldTop.value;
+    } catch (error) {
+      throw "empty stack";
+    }
+  }
+  peek() {
+    if (!this.top) {
+      throw "empty stack";
+    }
+
+    return this.top.value;
+  }
+
+  isEmpty() {
+    if (!this.top) {
+      return true;
+    }
+
+    return false;
   }
 }
 

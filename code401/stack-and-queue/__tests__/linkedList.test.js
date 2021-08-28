@@ -1,6 +1,6 @@
 "use strict";
 
-const { LinkedList, zipLists } = require("../index");
+const { LinkedList, zipLists } = require("../linkedList");
 
 describe("LinkedList", () => {
   it("should create new LinkedList ", () => {
