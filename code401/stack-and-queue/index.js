@@ -1,6 +1,7 @@
 "use strict";
 
 const Node = require("./node");
+const Stack = require("./stack");
 
 class LinkedList {
   constructor() {
@@ -179,22 +180,22 @@ function xxx(x) {
   return y;
 }
 
-let myList = new LinkedList();
+// let myList = new LinkedList();
 
-myList.append("1");
-myList.append("2");
-myList.append("3");
-// myList.append("2");
 // myList.append("1");
-// console.log(ppp(myList));
-// console.log(myList.toString());
-console.log(xxx(myList));
-// myList.insertBefore("xxx", "before");
-// myList.insertAfter("xxx", "after");
+// myList.append("2");
+// myList.append("3");
+// myList.append("4");
 
-// console.log(myList);
-// console.log(`includes("John") =>`, myList.includes("John"));
-// console.log(`includes("Alfred") =>`, myList.includes("Alfred"));
 // console.log(myList.toString());
-// myList.kthFromEnd(-1);
+
+let newStack = new Stack();
+newStack.push(1);
+newStack.push(2);
+newStack.push(3);
+
+console.log(newStack.top.value);
+console.log(newStack.top.next.value);
+console.log(newStack.top.next.next.value);
+
 module.exports = { LinkedList, zipLists };
