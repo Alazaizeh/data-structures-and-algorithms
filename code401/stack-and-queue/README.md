@@ -4,7 +4,8 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
 
 ## Challenge
 <!-- Description of the challenge -->
-Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node, and Create a Linked List class with the given functions
+Using a Linked List as the underlying data storage mechanism, implement both a Stack and a Queue
+
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 ![img](./cc.png)
