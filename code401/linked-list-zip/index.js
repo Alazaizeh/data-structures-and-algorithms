@@ -147,19 +147,48 @@ function zipLists(ll1, ll2) {
 
   return zippedList;
 }
+
+// 1 2 3 2 1
+function ppp(ll) {
+  let current = ll.head;
+  let arr = [];
+  while (current) {
+    arr.push(current.value);
+    current = current.next;
+  }
+  console.log(Math.ceil(arr.length / 2));
+  // O (n)
+  for (let i = 0, j = arr.length - 1; i < Math.ceil(arr.length / 2); i++, j--) {
+    if (arr[i] !== arr[j]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function xxx(x) {
+  let current = x.head;
+  let y = new LinkedList();
+  while (current) {
+    let temp = y.head;
+    y.head = new Node(current.value);
+    y.head.next = temp;
+    current = current.next;
+  }
+  console.log(y.toString());
+  return y;
+}
+
 let myList = new LinkedList();
 
-myList.append("Jack");
-myList.append("Albert");
-myList.append("John");
-
-let myList2 = new LinkedList();
-
-myList2.append("Jack2");
-myList2.append("Albert2");
-myList2.append("John2");
-
-console.log(zipLists(myList, myList2).toString());
+myList.append("1");
+myList.append("2");
+myList.append("3");
+// myList.append("2");
+// myList.append("1");
+// console.log(ppp(myList));
+// console.log(myList.toString());
+console.log(xxx(myList));
 // myList.insertBefore("xxx", "before");
 // myList.insertAfter("xxx", "after");
 
