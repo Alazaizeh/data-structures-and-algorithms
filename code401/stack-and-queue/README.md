@@ -22,10 +22,16 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
-- enqueue: big O(1)
-- dequeue: big O(1)
-- pop: big O(1)
-- push : big O(1)
-- isEmpty: big O(1)
-- peek: big O(1)
+- enqueue
+`adds a new node with that value to the back of the queue with an O(1)`
+- dequeue
+`returns the value from node from the front of the queue and removes the node from the front of the queue`
+- pop
+`returns the value from node from the top of the stack and removes the node from the top of the stack`
+- push
+`adds a new node with that value to the top of the stack with an O(1) Time performance`
+- isEmpty
+`Returns: Boolean indicating whether or not the queue or stack is empty`
+- peek
+`returns Value of the node located at the front of the queue and the top of the stack`
 
