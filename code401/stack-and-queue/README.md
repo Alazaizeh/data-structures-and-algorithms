@@ -9,9 +9,9 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-#### Stack
+### Stack
 ![img](./stack.png)
-#### Queue
+### Queue
 ![img](./queue.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
