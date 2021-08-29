@@ -4,14 +4,18 @@ Using a Linked List as the underlying data storage mechanism, implement both a S
 
 ## Challenge
 <!-- Description of the challenge -->
-Using a Linked List as the underlying data storage mechanism, implement both a Stack and a Queue
+- Create a Stack class that has a top property. It creates an empty Stack when instantiated.
+- Create a Queue class that has a front property. It creates an empty Queue when instantiated.
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![img](./cc.png)
+#### Stack
+![img](./stack.png)
+#### Queue
+![img](./queue.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
- The complexity of the functions increase linearly and in direct proportion to the number of inputs.
+In short, O(1) means that it takes a constant time, like 14 nanoseconds, or three minutes no matter the amount of data in the set.
 - enqueue: big O(1)
 - dequeue: big O(1)
 - isEmpty: big O(1)
