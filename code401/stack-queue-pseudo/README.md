@@ -5,7 +5,7 @@ Internally, utilize 2 Stack instances to create and manage the queue.
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-will be updated
+![cc11](./cc11.png)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
