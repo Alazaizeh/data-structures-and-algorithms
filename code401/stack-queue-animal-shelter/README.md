@@ -33,6 +33,8 @@ In short, O(1) means that it takes a constant time, like 14 nanoseconds, or thre
 <!-- Description of each method publicly available to your Linked List -->
 
 - enqueue(animal)
+
   `enqueue animal to Animalshelter calls, that can be either a dog or a cat object O(1)`
-- dequeue
+- dequeue(pref)
+
   `dequeue prefered animal and return either a dog or a cat, based on preference, If pref is not "dog" or "cat" then return null`
