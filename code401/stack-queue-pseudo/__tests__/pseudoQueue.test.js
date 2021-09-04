@@ -19,6 +19,6 @@ describe("PseudoQueue", () => {
     newQ.enqueue(1);
     newQ.enqueue(2);
 
-    expect(newQ.dequeue()).toEqual(2);
+    expect(newQ.dequeue()).toEqual(1);
   });
 });
