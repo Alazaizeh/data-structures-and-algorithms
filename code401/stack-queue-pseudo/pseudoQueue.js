@@ -13,14 +13,13 @@ class PseudoQueue {
   }
   dequeue() {
     if (this.stack2.peek()) {
-      this.stack2.pop();
-      return this.stack2.peek();
+      return this.stack2.pop();
     }
     while (this.stack1.peek()) {
       this.stack2.push(this.stack1.pop());
     }
-    this.stack2.pop();
-    return this.stack2.peek();
+
+    return this.stack2.pop();
   }
 }
 
