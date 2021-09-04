@@ -21,8 +21,8 @@ The shelter operates using a first-in, first-out approach.
 
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-- In short, O(1) means that it takes a constant time, like 14 nanoseconds, or three minutes no matter the amount of data in the set.
-- The complexity of the O(n) increase linearly and in direct proportion to the number of inputs.
+1. In short, O(1) means that it takes a constant time, like 14 nanoseconds, or three minutes no matter the amount of data in the set.
+2. The complexity of the O(n) increase linearly and in direct proportion to the number of inputs.
 
 
 - enqueue: big O(1)
