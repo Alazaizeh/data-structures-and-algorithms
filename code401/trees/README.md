@@ -5,10 +5,9 @@ a hierarchical structure as elements in a Tree are arranged in multiple levels.
 <!-- Description of the challenge -->
 - Create a Binary Tree class
 - Create a Binary Search Tree class
-- 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![img](./cc.png)
+![img](./tree.png)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 The time complexity for Search for element or inserting an element to the list is O(log n) that because it halves the input set in each iteration, we ignore half of nodes each iteration
@@ -16,8 +15,8 @@ The time complexity for Search for element or inserting an element to the list i
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 
-- preOrder
-- inOrder
-- postOrder
-- add
-- contains
+- preOrder ` root -> left -> right `
+- inOrder ` left -> root -> right `
+- postOrder ` left -> right -> root `
+- add ` add node to tree`
+- contains ` check if tree contains a value `
