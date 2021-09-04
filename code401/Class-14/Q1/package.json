@@ -1,0 +1,16 @@
+{
+  "name": "linked-list-insertions",
+  "version": "1.0.0",
+  "description": "<!-- Short summary or background information -->\r A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations. The elements in a linked list are linked using pointers.\r ## Challenge\r <!-- Description of the challenge -->\r Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node, and Create a Linked List class with the given functions\r ## Whiteboard Process\r <!-- Embedded whiteboard image -->\r ![img](./cc.png)\r ## Approach & Efficiency\r <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->\r  The complexity of the functions increase linearly and in direct proportion to the number of inputs.\r - apend: big O(n)\r - includes: big O(n)\r - toString: big O(n)\r - insertBefore: big O(n)\r - insertAfter: big O(n)\r - kthFromEnd : big O(n)\r - zipLists : big O(n)\r ## API\r <!-- Description of each method publicly available to your Linked List -->",
+  "main": "index.js",
+  "scripts": {
+    "start": "node stack.js",
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.0.6"
+  }
+}
