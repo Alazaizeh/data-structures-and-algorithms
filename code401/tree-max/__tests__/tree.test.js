@@ -64,12 +64,6 @@ describe("tree", () => {
     expect(postOrder).toEqual(expected);
   });
   it("Can successfully return the maximum node in the BST", () => {
-    let bst = new BST(new Node(2));
-    bst.add(5);
-    bst.add(14);
-    bst.add(1);
-
-    let expected = 14;
-    expect(bst.maximum()).toEqual(14);
+    expect(tree.maximum()).toEqual(9);
   });
 });
