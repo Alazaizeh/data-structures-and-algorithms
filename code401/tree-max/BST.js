@@ -29,25 +29,6 @@ class BST extends Tree {
   }
 
   contains = (value) => (this.preOrder().indexOf(value) > 0 ? true : false);
-
-  maximum() {
-    if (this.root == undefined) {
-      return "Empty Tree";
-    }
-
-    let max = this.root.value;
-    let recursive = (node) => {
-      if (node.value > max) {
-        max = node.value;
-      }
-      if (node.left) recursive(node.left);
-      if (node.right) recursive(node.right);
-    };
-
-    recursive(this.root);
-
-    return max;
-  }
 }
 
 module.exports = BST;

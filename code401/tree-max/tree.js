@@ -50,6 +50,25 @@ class Tree {
 
     return result;
   }
+
+  maximum() {
+    if (this.root == undefined) {
+      return "Empty Tree";
+    }
+
+    let max = this.root.value;
+    let recursive = (node) => {
+      if (node.value > max) {
+        max = node.value;
+      }
+      if (node.left) recursive(node.left);
+      if (node.right) recursive(node.right);
+    };
+
+    recursive(this.root);
+
+    return max;
+  }
 }
 
 module.exports = Tree;
