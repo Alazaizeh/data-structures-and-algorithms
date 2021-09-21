@@ -6,13 +6,13 @@ function Mergesort(arr) {
     let left = [];
     let right = [];
 
-    for (let i = 0; i < arr.length; i++) {
-      if (i < mid) {
-        left.push(arr[i]);
+    arr.forEach((ele, index) => {
+      if (index < mid) {
+        left.push(ele);
       } else {
-        right.push(arr[i]);
+        right.push(ele);
       }
-    }
+    });
 
     // sort the left side
     Mergesort(left);
@@ -50,7 +50,9 @@ function Merge(left, right, arr) {
     }
   }
 }
-let a = [2, 3, 5, 7, 13, 11];
+let a = [20, 18, 12, 8, 5, -2];
+
+console.log(a);
 Mergesort(a);
 
 module.exports = Mergesort;
