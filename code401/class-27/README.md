@@ -1,3 +1,3 @@
 # Merge Sort
 
-![img](./cc27.png)
+![img](./cc272.png)
