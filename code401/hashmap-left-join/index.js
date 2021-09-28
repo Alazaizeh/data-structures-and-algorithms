@@ -121,4 +121,4 @@ hh2.add("mo", "kak");
 
 console.log(leftJoin(hh1, hh2));
 
-module.exports = leftJoin;
+module.exports = { leftJoin, HashTable };
